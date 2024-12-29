@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поздравление!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://kartinkin.net/uploads/posts/2021-03/1616042272_29-p-pikselnii-fon-dlya-igri-32.jpg'); /* Фон из второго уровня */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Поздравляю, вы прошли игру!</h1>
+    <p>Ваш результат: <span id="finalScore">0</span></p>
+    <button onclick="window.location.href='index.html'">Вернуться на главную</button>
+
+    <script>
+        // Получаем финальный результат из localStorage
+        let finalScore = localStorage.getItem('finalScore');
+        
+        // Если результат существует, отображаем его
+        if (finalScore !== null) {
+            document.getElementById('finalScore').innerText = finalScore;
+        } else {
+            document.getElementById('finalScore').innerText = "Ошибка: результат не найден!";
+        }
+    </script>
+</body>
+</html>
